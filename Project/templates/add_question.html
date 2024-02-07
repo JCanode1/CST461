@@ -1,0 +1,33 @@
+<!-- add_question.html -->
+<form method="post" action="{{ url_for('add_question_to_quiz', quiz_id=quiz_id) if quiz_id != -1 else '' }}">
+    <label for="question_type">Question Type:</label>
+    <select id="question_type" name="question_type">
+        <option value="1">Type 1</option>
+        <option value="2">Type 2</option>
+    </select>
+
+    <label for="question_text">Question Text:</label>
+    <input type="text" id="question_text" name="question_text" required>
+
+    {% if selected_question_type == '1' %}
+        <label for="answer1">Answer 1:</label>
+        <input type="text" id="answer1" name="answer1" required>
+
+        <label for="answer2">Answer 2:</label>
+        <input type="text" id="answer2" name="answer2" required>
+    {% elif selected_question_type == '2' %}
+        <label for="answer1">Answer 1:</label>
+        <input type="text" id="answer1" name="answer1" required>
+
+        <label for="answer2">Answer 2:</label>
+        <input type="text" id="answer2" name="answer2" required>
+
+        <label for="answer3">Answer 3:</label>
+        <input type="text" id="answer3" name="answer3" required>
+
+        <label for="answer4">Answer 4:</label>
+        <input type="text" id="answer4" name="answer4" required>
+    {% endif %}
+
+    <button type="submit">Add Question</button>
+</form>

@@ -1,0 +1,20 @@
+<!-- display_question.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Details</title>
+</head>
+<body>
+    <h1>Question Details</h1>
+    {% if question %}
+        <p>ID: {{ question.questionID }}</p>
+        <p>Text: {{ question.text }}</p>
+        <!-- Add additional details here based on your model -->
+    {% else %}
+        <p>Question not found</p>
+    {% endif %}
+</body>
+</html>

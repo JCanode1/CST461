@@ -1,0 +1,39 @@
+<!-- display_quiz.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Your head content here -->
+</head>
+<body>
+    <h1>Quiz Details</h1>
+    {% if quiz %}
+        <p>ID: {{ quiz.quizID }}</p>
+        <p>Quiz Title: {{ quiz.title }}</p>
+        <!-- Add additional details here based on your model -->
+        <h2>Questions:</h2>
+        <ul>
+            {% for question in questions %}
+                <li>
+                    <p>Question ID: {{ question.questionID }}</p>
+                    <p>Text: {{ question.text }}</p>
+                    
+                    {% if question.question_type == 1 %}
+                        <p>Answer1: {{ question.answer1 }}</p>
+                        <p>Answer2: {{ question.answer2 }}</p>
+                    {% else %}
+                        <p>Answer1: {{ question.answer1 }}</p>
+                        <p>Answer2: {{ question.answer2 }}</p>
+                        <p>Answer3: {{ question.answer3 }}</p>
+                        <p>Answer4: {{ question.answer4 }}</p>
+                        <p>Question Type: {{ question.question_type }}</p>
+                    {% endif %}
+
+                    <!-- Add additional details here based on your model -->
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Quiz not found</p>
+    {% endif %}
+</body>
+</html>

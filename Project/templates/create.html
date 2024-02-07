@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Page</title>
+</head>
+<body>
+    <h1>Create Quiz</h1>
+
+    <form action="{{ url_for('create') }}" method="post">
+        <label for="quiz_title">Quiz Title:</label>
+        <input type="text" id="quiz_title" name="quiz_title" required>
+        
+        <!-- Add any other fields for your quiz creation form -->
+    
+        <button type="submit">Create Quiz</button>
+    </form>
+    
+    <!-- Include the subtemplate for adding a question -->
+    {% set selected_question_type = '1' %}
+    {% set quiz_id = -1 %}
+    {% include 'add_question.html' %}
+
+    <!-- Add any additional content for the create page -->
+
+</body>
+</html>
